@@ -1,0 +1,487 @@
+/* Master Color Variables */
+:root {
+    /* shared colors */
+    --bg-grey-light: #4d4b63;
+    --bg-grey-dark: #282828;
+    --shadow-grey-light: rgba(67, 67, 67, 0.5);
+    --shadow-grey-dark: rgba(0, 0, 0, 0.5);
+
+    --bg-red-light: rgb(255, 45, 45);
+    --bg-red-dark: rgb(172, 30, 30);
+    --shadow-red-light: rgba(255, 45, 45, 0.5);
+    --shadow-red-dark: rgba(172, 30, 30, 0.5);
+
+    --clockWhite: #ededed;
+
+    /* Clock A */
+    --clockA-bg: var(--bg-grey-dark);
+    --clockA-border: var(--bg-grey-dark);
+    --clockA-center: var(--bg-grey-light);
+
+    --clockA-marking-quarter: #1df52f;
+    --clockA-marking: #bdbdcb;
+
+    --clockA-hand: #61afff;
+    --clockA-hand-second: #ee791a;
+
+    --clockA-shadow-light: var(--shadow-grey-light);
+    --clockA-shadow-dark: var(--shadow-grey-dark);
+
+    /* clock B */
+    --clockB-bg: var(--bg-red-dark);
+    --clockB-border: var(--bg-red-light);
+    --clockB-center: var(--bg-red-light);
+
+    --clockB-marking-quarter: var(--bg-red-light);
+    --clockB-marking: #bdbdcb;
+
+    --clockB-hand: #61afff;
+    --clockB-hand-second: var(--bg-red-light);
+
+    --clockB-shadow-light: var(--shadow-red-light);
+    --clockB-shadow-dark: var(--shadow-red-dark);
+
+    /* clockSplit */
+    --clockSplit-bg: #ffeeb0;
+    --clockSplit-border: rgb(32 99 181);
+    --clockSplit-center: rgb(32 99 181);
+
+    --clockSplit-marking-quarter: rgb(32 99 181);
+    --clockSplit-marking: #bdbdcb;
+
+    --clockSplit-hand: #282828;
+    --clockSplit-hand-second: #ee791a;
+
+    --clockSplit-shadow-light: rgba(67, 67, 67, 0.5);
+    --clockSplit-shadow-dark: rgba(0, 0, 0, 0.5);
+}
+
+html {
+    background: var(--bg-grey-dark);
+    text-align: center;
+    font-size: 10px;
+}
+
+body {
+    margin: 0;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 100vh;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.clockContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: var(--clockWhite) 4px solid;
+    border-radius: 12px;
+    margin: 6px;
+}
+
+p {
+    margin: 0;
+    font-size: 1.1em;
+    color: var(--clockWhite);
+}
+
+.clock {
+    width: 32%;
+    min-width: 7em;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    padding: 0.5rem;
+    border: 7px solid;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.outer-clock-face {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+.outer-clock-face::after {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    transform: rotate(90deg)
+}
+
+.outer-clock-face::after,
+.outer-clock-face::before,
+.outer-clock-face .marking {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    z-index: 0;
+    left: 49%;
+}
+
+.outer-clock-face .marking {
+    width: 3px;
+}
+
+.outer-clock-face .marking.marking-one {
+    -webkit-transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+    transform: rotate(30deg)
+}
+
+.outer-clock-face .marking.marking-two {
+    -webkit-transform: rotate(60deg);
+    -moz-transform: rotate(60deg);
+    transform: rotate(60deg)
+}
+
+.outer-clock-face .marking.marking-three {
+    -webkit-transform: rotate(120deg);
+    -moz-transform: rotate(120deg);
+    transform: rotate(120deg)
+}
+
+.outer-clock-face .marking.marking-four {
+    -webkit-transform: rotate(150deg);
+    -moz-transform: rotate(150deg);
+    transform: rotate(150deg)
+}
+
+.inner-clock-face {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    z-index: 1;
+}
+
+.inner-clock-face::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    border-radius: 18px;
+    margin-left: -9px;
+    margin-top: -6px;
+    z-index: 11;
+}
+
+.hand {
+    width: 50%;
+    right: 50%;
+    height: 6px;
+    position: absolute;
+    top: 50%;
+    border-radius: 6px;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.hand.hour-hand {
+    width: 30%;
+    z-index: 3;
+}
+
+.hand.minute-hand {
+    width: 40%;
+    height: 3px;
+    z-index: 10;
+}
+
+.hand.second-hand,
+.hand.millisecond-hand {
+    width: 45%;
+    height: 2px;
+    z-index: 2;
+}
+
+.midDayIndicator {
+    width: 30%;
+    height: 20%;
+
+    position: absolute;
+    top: 15%;
+    left: 34%;
+    z-index: 1;
+
+    text-align: center;
+    font-weight: bold;
+    font-size: 3.75vw;
+
+    padding-top: 3%;
+    border: 2px solid;
+    border-radius: 8px;
+}
+
+/* -LOCAL CLOCK- */
+.clockLocal {
+    min-width: 14em;
+}
+
+.clockLocalContainer {
+    padding: 1em;
+}
+
+.clockLocalContainer p, .clockLocalContainer article {
+    font-size: 1.75em;
+    color: var(--clockWhite);
+}
+
+.clockLocalContainer article, .clockLocalContainer .timeZoneDisplay {
+    display: inline-block;
+}
+
+.clockLocalContainer .timeZoneDisplay {
+    font-size: .75em;
+}
+
+/* -CLOCK A- */
+/* clock border color and box shadows */
+.clockA {
+    border-color: var(--clockA-border);
+    box-shadow:
+        -4px -4px 10px var(--clockA-shadow-light),
+        inset 4px 4px 10px var(--clockA-shadow-dark),
+        inset -4px -4px 10px var(--clockA-shadow-light),
+        4px 4px 10px var(--clockA-shadow-dark);
+}
+
+/* clock midDayIndicator border */
+.clockA .midDayIndicator {
+    border-color: var(--clockA-marking);
+    box-shadow:
+        inset 3px 3px 8px var(--clockA-shadow-dark),
+        inset -3px -3px 8px var(--clockA-shadow-dark);
+
+    background: var(--clockA-bg);
+    color: var(--clockA-marking);
+}
+
+/* clock and clockfaces background colors */
+.clockA,
+.clockA .outer-clock-face,
+.clockA .inner-clock-face {
+    background: var(--clockA-bg);
+}
+
+/* clock center color */
+.clockA .inner-clock-face::before {
+    background: var(--clockA-center);
+}
+
+/* clock quarter markings color */
+.clockA .outer-clock-face::after,
+.clockA .outer-clock-face::before,
+.clockA .outer-clock-face .marking {
+    background: var(--clockA-marking-quarter);
+}
+
+/* clock non-quarter markings color */
+.clockA .outer-clock-face .marking {
+    background: var(--clockA-marking);
+}
+
+/* clock hands color */
+.clockA .hand {
+    background: var(--clockA-hand);
+}
+
+/* clock second-hand color */
+.clockA .hand.second-hand {
+    background: var(--clockA-hand-second);
+}
+
+/* -CLOCK B- */
+/* clock border color and box shadows */
+.clockB {
+    border-color: var(--clockB-border);
+    box-shadow:
+        -4px -4px 10px var(--clockB-shadow-light),
+        inset 4px 4px 10px var(--clockB-shadow-dark),
+        inset -4px -4px 10px var(--clockB-shadow-light),
+        4px 4px 10px var(--clockB-shadow-dark);
+}
+
+/* clock and clockfaces background colors */
+.clockB,
+.clockB .outer-clock-face,
+.clockB .inner-clock-face {
+    background: var(--clockB-bg);
+}
+
+/* clock center color */
+.clockB .inner-clock-face::before {
+    background: var(--clockB-center);
+}
+
+/* clock quarter markings color */
+.clockB .outer-clock-face::after,
+.clockB .outer-clock-face::before,
+.clockB .outer-clock-face .marking {
+    background: var(--clockB-marking-quarter);
+}
+
+/* clock non-quarter markings color */
+.clockB .outer-clock-face .marking {
+    background: var(--clockB-marking);
+}
+
+/* clock hands color */
+.clockB .hand {
+    background: var(--clockB-hand);
+}
+
+/* clock second-hand color */
+.clockB .hand.second-hand {
+    background: var(--clockB-hand-second);
+}
+
+/* -TIMEZONE CLOCKS */
+/* clock border color and box shadows */
+/* .clockZones {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+} */
+
+.clockZones .clock {
+    border-color: var(--clockWhite);
+}
+
+
+/* clock midDayIndicator border */
+.clockZones .midDayIndicator {
+    border-color: var(--clockA-marking);
+    box-shadow:
+        inset 2px 2px 4px var(--clockA-shadow-dark),
+        inset -2px -2px 4px var(--clockA-shadow-dark);
+
+    background: var(--clockA-bg);
+    color: var(--clockA-marking);
+    font-size: 1.5vw;
+}
+
+/* clock hands color */
+.clockZones .hand,
+.clockZones .hand.second-hand {
+    background: var(--clockWhite);
+}
+
+/* clock words colors */
+.clockNYCContainer {
+    color: #00a192;
+}
+
+.clockLosAngelesContainer {
+    color: #ff5959;
+}
+
+.clockHongKongContainer {
+    color: #cd4922;
+}
+
+.clockLondonContainer {
+    color: #52a737;
+}
+
+/* clock and clockfaces background colors */
+.clockNYC,
+.clockNYC .outer-clock-face,
+.clockNYC .inner-clock-face {
+    background: #00a192;
+}
+
+.clockLosAngeles,
+.clockLosAngeles .outer-clock-face,
+.clockLosAngeles .inner-clock-face {
+    background: #ff5959;
+}
+
+.clockHongKong,
+.clockHongKong .outer-clock-face,
+.clockHongKong .inner-clock-face {
+    background: #cd4922;
+}
+
+.clockLondon,
+.clockLondon .outer-clock-face,
+.clockLondon .inner-clock-face {
+    background: #52a737;
+}
+
+/* -CLOCKSPLIT- */
+/* clock border color and box shadows */
+.clockSplit .clock {
+    border-color: var(--clockSplit-border);
+    box-shadow:
+        -4px -4px 10px var(--clockSplit-shadow-light),
+        inset 4px 4px 10px var(--clockSplit-shadow-dark),
+        inset -4px -4px 10px var(--clockSplit-shadow-light),
+        4px 4px 10px var(--clockSplit-shadow-dark);
+}
+
+/* clock and clockfaces colors */
+.clockSplit .clock,
+.clockSplit .clock .outer-clock-face,
+.clockSplit .clock .inner-clock-face {
+    background: var(--clockSplit-bg);
+}
+
+/* clock center color */
+.clockSplit .clock .inner-clock-face::before {
+    background: var(--clockSplit-center);
+}
+
+/* clock quarter markings color */
+.clockSplit .clock .outer-clock-face::after,
+.clockSplit .clock .outer-clock-face::before,
+.clockSplit .clock .outer-clock-face .marking {
+    background: var(--clockSplit-marking-quarter);
+}
+
+/* clock non-quarter markings color */
+.clockSplit .clock .outer-clock-face .marking {
+    background: var(--clockSplit-marking);
+}
+
+/* clock hands color */
+.clockSplit .clock .hand {
+    background: var(--clockSplit-hand);
+}
+
+/* clock second-hand color */
+/* .clockSplit .clock .hand.second-hand {
+    background: var(--clockSplit-hand-second);
+}
+
+.clockSplit .clock .hand.millisecond-hand {
+    background: red;
+} */
+
+.clockSplit .hand {
+    width: 50%;
+    height: 6px;
+}
+
+.clockSplit .clock .hand.second-hand,
+.clockSplit .clock .hand.millisecond-hand {
+    width: 50%;
+    height: 6px;
+}

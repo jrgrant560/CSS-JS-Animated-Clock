@@ -1,0 +1,112 @@
+@font-face {
+    font-family: digital7;
+    src: url('Digital7.ttf');
+}
+
+.clock {
+    width: 480px;
+    height: 200px;
+
+    position: relative;
+
+    background-color: var(--bg-grey-dark);
+    border: var(--clockWhite) 4px solid;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clockBase {
+    
+}
+
+.clockFrame {
+
+}
+
+.clockDisplay, .clockDisplayEmpty {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 90% 10%;
+    align-items: center;
+    justify-content: center;
+    
+    font-family: digital7;
+    font-size: 4.25em;
+
+    position: absolute;
+    top: 0px;
+}
+
+.clockDisplay {
+    z-index: 11;
+    color: lightgreen;
+}
+
+.clockDisplayEmpty {
+    z-index: 10;
+    color: black;
+}
+
+.clockTime {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.clockTime>* {
+    width: 100%;
+}
+
+.clockHours {
+
+}
+
+.splitMinutes {
+
+}
+
+.splitSeconds {
+
+}
+
+.splitMilliseconds {
+
+}
+
+.midDayIndicator {
+
+}
+
+
+/* clockLocal */
+.clockLocal {
+
+}
+
+
+/* timezone Clocks */
+.clockNYC {
+
+}
+
+.clockLosAngeles {
+
+}
+
+.clockHongKong {
+
+}
+
+.clockLondon {
+
+}
+
+
+/* clockSplit */
+.clockSplit {
+
+}

@@ -1,0 +1,152 @@
+/* Master Color Variables */
+:root {
+    /* shared colors */
+    --bg-grey-light: #4d4b63;
+    --bg-grey-dark: #282828;
+    --shadow-grey-light: rgba(67, 67, 67, 0.5);
+    --shadow-grey-dark: rgba(0, 0, 0, 0.5);
+
+    --bg-red-light: rgb(255, 45, 45);
+    --bg-red-dark: rgb(172, 30, 30);
+    --shadow-red-light: rgba(255, 45, 45, 0.5);
+    --shadow-red-dark: rgba(172, 30, 30, 0.5);
+
+    --clockWhite: #ededed;
+
+    /* Clock A */
+    --clockA-bg: var(--bg-grey-dark);
+    --clockA-border: var(--bg-grey-dark);
+    --clockA-center: var(--bg-grey-light);
+
+    --clockA-marking-quarter: #1df52f;
+    --clockA-marking: #bdbdcb;
+
+    --clockA-hand: #61afff;
+    --clockA-hand-second: #ee791a;
+
+    --clockA-shadow-light: var(--shadow-grey-light);
+    --clockA-shadow-dark: var(--shadow-grey-dark);
+
+    /* clock B */
+    --clockB-bg: var(--bg-red-dark);
+    --clockB-border: var(--bg-red-light);
+    --clockB-center: var(--bg-red-light);
+
+    --clockB-marking-quarter: var(--bg-red-light);
+    --clockB-marking: #bdbdcb;
+
+    --clockB-hand: #61afff;
+    --clockB-hand-second: var(--bg-red-light);
+
+    --clockB-shadow-light: var(--shadow-red-light);
+    --clockB-shadow-dark: var(--shadow-red-dark);
+
+    /* clockSplit */
+    --clockSplit-bg: #ffeeb0;
+    --clockSplit-border: rgb(32 99 181);
+    --clockSplit-center: rgb(32 99 181);
+
+    --clockSplit-marking-quarter: rgb(32 99 181);
+    --clockSplit-marking: #bdbdcb;
+
+    --clockSplit-hand: #282828;
+    --clockSplit-hand-second: #ee791a;
+
+    --clockSplit-shadow-light: rgba(67, 67, 67, 0.5);
+    --clockSplit-shadow-dark: rgba(0, 0, 0, 0.5);
+}
+
+.clocksBody {
+    background: var(--bg-grey-dark);
+    text-align: center;
+    font-size: 10px;
+}
+
+#clocksContainer {
+    margin: 0;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 100vh;
+}
+
+.clockRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+hr {
+    width: 90%;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+    opacity: 0.8;
+    border-radius: 2px;
+}
+
+.clockContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: var(--clockWhite) 4px solid;
+    border-radius: 12px;
+    margin: 6px;
+}
+
+p {
+    margin: 0;
+    font-size: 1em;
+    color: var(--clockWhite);
+}
+
+.timeZoneDate, .timeZoneDisplayContainer {
+    font-size: 0.75em;
+}
+
+/* -LOCAL CLOCK- */
+.clockLocalContainer {
+    padding: 1em;
+}
+
+.clockLocalContainer p, .clockLocalContainer article {
+    /* font-size: 1.75em; */
+    color: var(--clockWhite);
+}
+
+.clockLocalContainer article, .clockLocalContainer .timeZoneDisplay {
+    display: inline-block;
+}
+
+/* -TIMEZONE CLOCKS */
+/* clock and clockfaces background colors */
+.clockNYC {
+    background: #00a192;
+}
+
+.clockLosAngeles {
+    background: #ff5959;
+}
+
+.clockHongKong {
+    background: #cd4922;
+}
+
+.clockLondon {
+    background: #52a737;
+}
+
+/* -CLOCKSPLIT- */
+/* clock border color and box shadows */
+.clockSplit {
+    border-color: var(--clockSplit-border);
+}
+
+/* clock and clockfaces colors */
+.clockSplit {
+    background: var(--clockSplit-bg);
+}

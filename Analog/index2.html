@@ -1,0 +1,174 @@
+<!-- Source for this awesome clock style: https://dev.to/code_mystery/simple-analog-clock-using-html-css-javascript-2c6a -->
+<html>
+
+<head>
+    <title>Analog Clocks</title>
+    <link rel="stylesheet" type="text/css" href="styles2.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="row">
+        <section class="clockContainer clockLocalContainer">
+            <p>Your Time</p>
+            <article>
+                (
+                <div class="timeZoneDisplay">TimeZone</div>
+                )
+            </article>
+            <p class="timeZoneDate">Monday?</p>
+            <span class="clock clockA clockLocal">
+                <div class="outer-clock-face">
+                    <div class="marking marking-one"></div>
+                    <div class="marking marking-two"></div>
+                    <div class="marking marking-three"></div>
+                    <div class="marking marking-four"></div>
+                </div>
+                <div class="inner-clock-face">
+                    <div class="hand hour-hand"></div>
+                    <div class="hand minute-hand"></div>
+                    <div class="hand second-hand"></div>
+                    <div class="midDayIndicator"></div>
+                </div>
+            </span>
+        </section>
+    </div>
+    <hr style="width:90%">
+    <div class="row clockZones">
+        <section class="clockContainer clockNYCContainer">
+            <p>New York City</p>
+            <p class="timeZoneDate">Monday?</p>
+            <span class="clock clockA clockNYC">
+                <div class="outer-clock-face">
+                    <div class="marking marking-one"></div>
+                    <div class="marking marking-two"></div>
+                    <div class="marking marking-three"></div>
+                    <div class="marking marking-four"></div>
+                </div>
+                <div class="inner-clock-face">
+                    <div class="hand hour-hand"></div>
+                    <div class="hand minute-hand"></div>
+                    <div class="hand second-hand"></div>
+                    <div class="midDayIndicator"></div>
+                </div>
+            </span>
+        </section>
+        <section class="clockContainer clockLosAngelesContainer">
+            <p>Los Angeles</p>
+            <p class="timeZoneDate">Monday?</p>
+            <span class="clock clockA clockLosAngeles">
+                <div class="outer-clock-face">
+                    <div class="marking marking-one"></div>
+                    <div class="marking marking-two"></div>
+                    <div class="marking marking-three"></div>
+                    <div class="marking marking-four"></div>
+                </div>
+                <div class="inner-clock-face">
+                    <div class="hand hour-hand"></div>
+                    <div class="hand minute-hand"></div>
+                    <div class="hand second-hand"></div>
+                    <div class="midDayIndicator"></div>
+                </div>
+            </span>
+        </section>
+        <section class="clockContainer clockHongKongContainer">
+            <p>Hong Kong</p>
+            <p class="timeZoneDate">Monday?</p>
+            <span class="clock clockA clockHongKong">
+                <div class="outer-clock-face">
+                    <div class="marking marking-one"></div>
+                    <div class="marking marking-two"></div>
+                    <div class="marking marking-three"></div>
+                    <div class="marking marking-four"></div>
+                </div>
+                <div class="inner-clock-face">
+                    <div class="hand hour-hand"></div>
+                    <div class="hand minute-hand"></div>
+                    <div class="hand second-hand"></div>
+                    <div class="midDayIndicator"></div>
+                </div>
+            </span>
+        </section>
+        <section class="clockContainer clockLondonContainer">
+            <p>London</p>
+            <p class="timeZoneDate">Monday?</p>
+            <span class="clock clockA clockLondon">
+                <div class="outer-clock-face">
+                    <div class="marking marking-one"></div>
+                    <div class="marking marking-two"></div>
+                    <div class="marking marking-three"></div>
+                    <div class="marking marking-four"></div>
+                </div>
+                <div class="inner-clock-face">
+                    <div class="hand hour-hand"></div>
+                    <div class="hand minute-hand"></div>
+                    <div class="hand second-hand"></div>
+                    <div class="midDayIndicator"></div>
+                </div>
+            </span>
+        </section>
+    </div>
+    <hr style="width:90%">
+    <div class="row clockSplit">
+        <section class="clockContainer">
+            <span class="clock clockC">
+                <div class="outer-clock-face">
+                    <div class="marking marking-one"></div>
+                    <div class="marking marking-two"></div>
+                    <div class="marking marking-three"></div>
+                    <div class="marking marking-four"></div>
+                </div>
+                <div class="inner-clock-face">
+                    <div class="hand hour-hand"></div>
+                </div>
+            </span>
+            <p>Hours</p>
+        </section>
+        <section class="clockContainer">
+            <span class="clock clockD">
+                <div class="outer-clock-face">
+                    <div class="marking marking-one"></div>
+                    <div class="marking marking-two"></div>
+                    <div class="marking marking-three"></div>
+                    <div class="marking marking-four"></div>
+                </div>
+                <div class="inner-clock-face">
+                    <div class="hand minute-hand"></div>
+                </div>
+            </span>
+            <p>Minutes</p>
+        </section>
+        <section class="clockContainer">
+            <span class="clock clockE">
+                <div class="outer-clock-face">
+                    <div class="marking marking-one"></div>
+                    <div class="marking marking-two"></div>
+                    <div class="marking marking-three"></div>
+                    <div class="marking marking-four"></div>
+                </div>
+                <div class="inner-clock-face">
+                    <div class="hand second-hand"></div>
+                </div>
+            </span>
+            <p>Seconds</p>
+        </section>
+        <section class="clockContainer">
+            <span class="clock clockF">
+                <div class="outer-clock-face">
+                    <div class="marking marking-one"></div>
+                    <div class="marking marking-two"></div>
+                    <div class="marking marking-three"></div>
+                    <div class="marking marking-four"></div>
+                </div>
+                <div class="inner-clock-face">
+                    <div class="hand millisecond-hand"></div>
+                </div>
+            </span>
+            <p>Milliseconds</p>
+        </section>
+    </div>
+</body>
+<script src="script2.js"></script>
+
+</html>

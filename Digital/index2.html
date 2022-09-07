@@ -1,0 +1,123 @@
+<!-- Source for this awesome clock style: https://dev.to/code_mystery/simple-analog-clock-using-html-css-javascript-2c6a -->
+<html>
+
+<head>
+    <title>Digital Clocks</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="styles2.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="clocksBody">
+    <main id="clocksContainer" class="clocksDigital">
+        <div class="clockRow">
+            <section class="clockContainer clockLocalContainer">
+                <p>Your Time</p>
+                <article class="timeZoneDisplayContainer">
+                    (
+                    <div class="timeZoneDisplay">TimeZone</div>
+                    )
+                </article>
+                <p class="timeZoneDate">Monday?</p>
+                <span class="clock clockLocal">
+                    <div class="clockBase"></div>
+                    <div class="clockFrame"></div>
+                    <div class="clockDisplayEmpty">
+                        <div class="clockTime">
+                            <div class="clockHours01">1</div>
+                            <div class="clockHours02">8</div>
+                            <div class="divider">:</div>
+                            <div class="clockMinutes01">8</div>
+                            <div class="clockMinutes02">8</div>
+                            <div class="divider">:</div>
+                            <div class="clockSeconds01">8</div>
+                            <div class="clockSeconds02">8</div>
+                        </div>
+                        <div class="midDayIndicator">PM</div>
+                    </div>
+                    <div class="clockDisplay">
+                        <div class="clockTime">
+                            <div class="clockHours01">1</div>
+                            <div class="clockHours02">8</div>
+                            <div class="divider">:</div>
+                            <div class="clockMinutes01">8</div>
+                            <div class="clockMinutes02">8</div>
+                            <div class="divider">:</div>
+                            <div class="clockSeconds01">8</div>
+                            <div class="clockSeconds02">8</div>
+                        </div>
+                        <div class="midDayIndicator">PM</div>
+                    </div>
+                                        <!-- <div class="outer-clock-face">
+                        <div class="marking marking-one"></div>
+                        <div class="marking marking-two"></div>
+                        <div class="marking marking-three"></div>
+                        <div class="marking marking-four"></div>
+                    </div>
+                    <div class="inner-clock-face">
+                        <div class="hand hour-hand"></div>
+                        <div class="hand minute-hand"></div>
+                        <div class="hand second-hand"></div>
+                        <div class="midDayIndicator"></div>
+                    </div> -->
+                </span>
+            </section>
+        </div>
+        <hr>
+        <div class="clockRow clockZones">
+            <section class="clockContainer clockNYCContainer">
+                <p>New York City</p>
+                <p class="timeZoneDate">Monday?</p>
+                <span class="clock clockNYC">
+                </span>
+            </section>
+            <section class="clockContainer clockLosAngelesContainer">
+                <p>Los Angeles</p>
+                <p class="timeZoneDate">Monday?</p>
+                <span class="clock clockLosAngeles">
+                </span>
+            </section>
+            <section class="clockContainer clockHongKongContainer">
+                <p>Hong Kong</p>
+                <p class="timeZoneDate">Monday?</p>
+                <span class="clock clockHongKong">
+                </span>
+            </section>
+            <section class="clockContainer clockLondonContainer">
+                <p>London</p>
+                <p class="timeZoneDate">Monday?</p>
+                <span class="clock clockLondon">
+                </span>
+            </section>
+        </div>
+        <hr>
+        <div class="clockRow">
+            <!-- <section class="clockContainer">
+                <span class="clock clockSplit">
+                    <div class="clockBase"></div>
+                    <div class="clockFrame"></div>
+                    <div class="clockDisplay">
+                        <div class="clockTime">
+                            <div class="clockHours01">1</div>
+                            <div class="clockHours02">8</div>
+                            <div class="divider">:</div>
+                            <div class="clockMinutes01">8</div>
+                            <div class="clockMinutes02">8</div>
+                            <div class="divider">:</div>
+                            <div class="clockSeconds01">8</div>
+                            <div class="clockSeconds02">8</div>
+                            <div class="divider">:</div>
+                            <div class="clockMilliseconds01">8</div>
+                            <div class="clockMilliseconds02">8</div>
+                        </div>
+                        <div class="midDayIndicator"></div>
+                    </div>
+                </span>
+            </section> -->
+        </div>
+    </main>
+</body>
+<script src="script2.js"></script>
+
+</html>
